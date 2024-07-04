@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+                 package marketData;
+service MarketDataService {
+ rpc createMarketData (MarketDataCreateInput) returns (MarketData) {}
+rpc marketDataItems (findManyParams) returns (stream MarketData) {}
+rpc marketData (MarketDataWhereUniqueInput) returns (MarketData) {}
+rpc updateMarketData (MarketDataUpdateInput) returns (MarketData) {}
+rpc deleteMarketData (MarketDataWhereUniqueInput) returns (MarketData) {} 
+ }
+message MarketDataCreateInput {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message MarketData {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message MarketDataWhereUniqueInput {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message MarketDataUpdateInput {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message findManyParams {
+
+};

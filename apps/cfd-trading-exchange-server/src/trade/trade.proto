@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+                 package trade;
+service TradeService {
+ rpc createTrade (TradeCreateInput) returns (Trade) {}
+rpc trades (findManyParams) returns (stream Trade) {}
+rpc trade (TradeWhereUniqueInput) returns (Trade) {}
+rpc updateTrade (TradeUpdateInput) returns (Trade) {}
+rpc deleteTrade (TradeWhereUniqueInput) returns (Trade) {} 
+ }
+message TradeCreateInput {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message Trade {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message TradeWhereUniqueInput {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message TradeUpdateInput {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message findManyParams {
+
+};
