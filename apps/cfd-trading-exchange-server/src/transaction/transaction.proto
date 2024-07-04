@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+                 package transaction;
+service TransactionService {
+ rpc createTransaction (TransactionCreateInput) returns (Transaction) {}
+rpc transactions (findManyParams) returns (stream Transaction) {}
+rpc transaction (TransactionWhereUniqueInput) returns (Transaction) {}
+rpc updateTransaction (TransactionUpdateInput) returns (Transaction) {}
+rpc deleteTransaction (TransactionWhereUniqueInput) returns (Transaction) {} 
+ }
+message TransactionCreateInput {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message Transaction {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message TransactionWhereUniqueInput {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message TransactionUpdateInput {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message findManyParams {
+
+};

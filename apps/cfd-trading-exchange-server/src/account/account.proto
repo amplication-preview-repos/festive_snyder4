@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+                 package account;
+service AccountService {
+ rpc createAccount (AccountCreateInput) returns (Account) {}
+rpc accounts (findManyParams) returns (stream Account) {}
+rpc account (AccountWhereUniqueInput) returns (Account) {}
+rpc updateAccount (AccountUpdateInput) returns (Account) {}
+rpc deleteAccount (AccountWhereUniqueInput) returns (Account) {} 
+ }
+message AccountCreateInput {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message Account {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message AccountWhereUniqueInput {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message AccountUpdateInput {
+string createdAt = 1;
+string id = 2;
+string updatedAt = 3;
+};
+message findManyParams {
+
+};
